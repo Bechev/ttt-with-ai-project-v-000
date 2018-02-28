@@ -15,6 +15,8 @@ module Players
       if winning_move
         return (winning_move + 1).to_s
       end
+
+      #We then check what are the moves that gives the most favorable outcomes
       score = 0
       scores = possible_moves.collect do |user_input|
         score_possible_move(board,user_input,self.token,score)

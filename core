@@ -1,0 +1,26 @@
+
+[1mFrom:[0m /home/Bechev/ttt-with-ai-project-v-000/lib/players/computer.rb @ line 22 Players::Computer#move:
+
+     [1;34m5[0m: [32mdef[0m [1;34mmove[0m(board)
+     [1;34m6[0m: 
+     [1;34m7[0m:   [1;34m# We initialize a score_list to rate the possible moves that the computer can execute and perform the highest rated one[0m
+     [1;34m8[0m:   scores = []
+     [1;34m9[0m:   [1;34m# We identify the best move to make by assigning it a score. If the computer's next move gives him a win, he get 1 points[0m
+    [1;34m10[0m:   [1;34m#If it gives it a loss, he gets -1 point and if nothing, 0[0m
+    [1;34m11[0m:   possible_moves = available_moves(board)
+    [1;34m12[0m: 
+    [1;34m13[0m:   [1;34m#We verify if the next move can be a win and return if it is[0m
+    [1;34m14[0m:   winning_move = winning_move?(possible_moves,board)
+    [1;34m15[0m:   [32mif[0m winning_move
+    [1;34m16[0m:     [32mreturn[0m (winning_move + [1;34m1[0m).to_s
+    [1;34m17[0m:   [32mend[0m
+    [1;34m18[0m: 
+    [1;34m19[0m:   [1;34m#We then check what are the moves that gives the most favorable outcomes[0m
+    [1;34m20[0m:   score = [1;34m0[0m
+    [1;34m21[0m:   scores = possible_moves.collect [32mdo[0m |user_input|
+ => [1;34m22[0m:     score_possible_move(board,user_input,[1;36mself[0m.token,score)
+    [1;34m23[0m:   [32mend[0m
+    [1;34m24[0m:   binding.pry
+    [1;34m25[0m:   (possible_moves[scores.each_with_index.max[[1;34m1[0m]]+[1;34m1[0m).to_s
+    [1;34m26[0m: [32mend[0m
+

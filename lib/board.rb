@@ -9,7 +9,7 @@ attr_accessor :cells
 
   def reset!
     #@cells = Array.new(9," ")
-    @cells= ["X","O","O",
+    @cells= ["X","X","O",
              "O","X"," ",
              " "," "," "]
   end
@@ -54,11 +54,13 @@ attr_accessor :cells
   def winning_board?
     ai_game = Game.new(Players::Human.new("X"),Players::Human.new("O"),self)
     ai_game.won?
+    #binding.pry
   end
 
   def game_winner?
     ai_game = Game.new(Players::Human.new("X"),Players::Human.new("O"),self)
     ai_game.winner
+    #binding.pry
   end
 
   def game_player?
